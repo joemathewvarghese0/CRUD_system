@@ -1,5 +1,1 @@
-# Authentication_page
-
-This is a project based on login and registration system.
-The tools to build the project are MongoDB, Express.js, React, Node.js.
-The features are User Registration, User Login, Database Storage, UI, Password Validation.
+In this project, we will build a simple CRUD (Create, Read, Update, Delete) application using the MERN stack. The application will allow users to create, view, update, and delete records stored in a MongoDB database.
