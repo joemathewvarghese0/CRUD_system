@@ -7,7 +7,7 @@ const router = express.Router();
 
 //define a POST route handler for createing a new user
 router.post("/",async (req,res) => {
-
+ console.log(req.body)
     const{name, email, age} = req.body;
 
     try{
@@ -20,18 +20,21 @@ router.post("/",async (req,res) => {
 
         res.status(201).json(userAdded);
     }catch (error) {
+        
         res.status(400).json({ Error: error.message });
 
-        console.log("An error occured:", error);
+        
     }
 });
 //define a GET route handler for retrieving all users
 router.get("/", async (req, res) => {
     try{
-        const showAll = await User.fnd();
+        const showAll = await User.find();
 
         res.status(201).json(showAll);
     }catch (error) {
+        console.error(error);
+        console.log("An error occured:", error.message);
         res.status(400).json({ error: error.message });
     }
 });
