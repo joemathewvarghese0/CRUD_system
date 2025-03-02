@@ -31,7 +31,7 @@ const Create = () => {
     //parse the JSON response from the server
     const result = await response.json();
 
-    //Handle errors if the response is not OK
+    //Handle errors if the response is !OK
     if (!response.ok) {
       console.log(result.error);
       setError(result.error);
@@ -58,14 +58,14 @@ const Create = () => {
           <label className="form-label">Name</label>
           <input
             type="text"
-            classname="form-control"
+            className="form-control"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
         </div>
 
         <div className="mb-3">
-          <label className="form-label">Email Address</label>
+          <label className="form-label">Email </label>
           <input
             type="email"
             className="form-control"
