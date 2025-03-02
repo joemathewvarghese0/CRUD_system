@@ -1,3 +1,4 @@
+import "./styles2.css";
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -69,7 +70,7 @@ const Update = () => {
 
   //render the form for updating user data
   return (
-    <div>
+    <div className="container">
       {/* Display error message if there is an error */}
       {error && <div className="alert alert-danger">{error}</div>}
       <form onSubmit={handleSubmit}>
@@ -84,7 +85,7 @@ const Update = () => {
         </div>
 
         <div className="mb-3">
-          <label className="form-label">Email</label>
+          <label className="form-label">Email </label>
           <input
             type="email"
             className="form-control"

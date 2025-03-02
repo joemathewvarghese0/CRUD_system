@@ -1,4 +1,10 @@
 /* Navbar Styling */
+.navbar .navbar-expand-lg .bg-body-tertiary {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
 .navbar {
     background-color: #007bff !important; /* Primary color */
     display: flex;
@@ -7,15 +13,22 @@
     gap: 20px;
   }
   
-  /* Navbar Brand (MERN) */
-  .navbar-nav .nav-link.active {
-    font-weight: bold;
-    font-size: px;
-    color: white !important;
+  .navbar-nav {
     display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    gap: 20px;
+    flex-direction: row;  /* Ensures horizontal alignment */
+    gap: 30px;            /* Adds space between items */
+    margin-left: -45vw !important;
+    padding-left: 0 !important;
+  }
+  
+  .nav-item {
+    list-style: none;     /* Removes bullets */
+  }
+  
+  .nav-link {
+    text-decoration: none; /* Removes underline */
+    font-size: 18px;      /* Adjust font size */
+    color: black;         /* Default text color */
   }
   
   /* Navbar Links */
@@ -33,27 +46,15 @@
     background-color: rgba(255, 255, 255, 0.116);
     border-radius: 5px;
   }
-  
-  /* Navbar Toggle Button */
-  .navbar-toggler {
-    border: none;
-  }
-  
-  .navbar-toggler:focus {
-    outline: none;
-    box-shadow: none;
-  }
-  
   .nav-item{
     display: flex;
     justify-content: space-around;
     flex-direction: row;
   }
-
   /* Responsive adjustments */
   @media (max-width: 768px) {
     .navbar-nav {
-      text-align: center;
+      text-align: left;
     }
   
     .navbar-nav .nav-item {

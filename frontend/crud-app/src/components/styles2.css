@@ -17,7 +17,17 @@
     border-radius: 5px;
     font-size: 16px;
   }
-  
+
+  .form-control {
+    width: 90% !important;
+    padding: 10px !important;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    
+}
+
+
   /* Label styling */
   .form-label {
     font-weight: bold;
@@ -25,7 +35,8 @@
     text-align: left;
     display: block;
     position: relative;
-    left: -485px;
+    margin-left: 500px;
+    margin-bottom: 5px;
   }
   
   
