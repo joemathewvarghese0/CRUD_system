@@ -1,4 +1,4 @@
-import "./styles2.css";
+import "./stylesup.css";
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -66,7 +66,7 @@ const Update = () => {
   //useEffect hook to fetch single user data when the coponent is mounted
   useEffect(() => {
     getSingleUser();
-  }, []);
+  });
 
   //render the form for updating user data
   return (
