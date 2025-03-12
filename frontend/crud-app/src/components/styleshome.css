@@ -1,0 +1,46 @@
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #73809b; /* Dark Blue-Gray */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+  
+  .sidebar h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: 100px;
+  }
+  
+  .nav-links a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links a:hover{
+    background-color: rgba(255, 255, 255, 0.116);
+    border-radius: 5px;
+  }
+  
+  

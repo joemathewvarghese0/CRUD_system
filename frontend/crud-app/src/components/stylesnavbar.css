@@ -1,0 +1,68 @@
+/* Navbar Styling */
+.navbar {
+  background: #e7b1b1; /* Primary color */
+  display: flex;
+  justify-content: space-between; /* "Inner Peace" on left, links on right */
+  align-items: left; /* Aligns elements in the same row */
+  padding: 10px 20px;
+}
+
+/* Navbar Brand (Inner Peace) - Stays on the Left */
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+  color: black; /* Adjust color */
+  align-items: left;
+  text-align: start;
+}
+
+/* Navbar Navigation (Home, Create Post, etc.) */
+.navbar-nav {
+  display: flex;
+  gap: 30px; /* Space between menu items */
+  margin-left: 800px; /* Pushes nav items to the right */
+  align-items: right;
+}
+
+/* Individual Nav Items */
+.nav-item {
+  list-style: none;
+  margin-left: auto; /* Pushes nav items to the right */
+  align-items: right;
+}
+
+/* Navbar Link Styling */
+.nav-link {
+  text-decoration: none;
+  font-size: 18px;
+  color: #418edb !important; /* Default text color */
+  padding: 0px;
+  margin-left: px;
+  transition: 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.nav-link:hover {
+  background-color: rgba(145, 46, 46, 0.116);
+  border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column; /* Stack items in mobile view */
+      align-items: center;
+  }
+
+  .navbar-nav {
+      text-align: right;
+      flex-direction: column; /* Stack links */
+      gap: 10px;
+  }
+
+  .navbar-nav .nav-item {
+      margin-bottom: 10px;
+      text-align: right;
+  }
+}

@@ -1,47 +1,56 @@
-import "./styles1.css";
+import "./stylesnavbar.css";
 import React from "react";
 import { Link } from "react-router-dom";
 
 //define navbar component
-const Navbar = () => {
+const Navbar = ({ isAuthenticated, onLogout }) => {
   return (
     <div>
       {/* Bootstrap Navbar */}
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
-          {/*Navbar toggle button for mobile view*/}
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle-navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          {/*Collapisble navbar content*/}
+        <div className="container-fluid d-flex justify-content-between align-items-center">
+           {/* Left: Website Title */}
+        <h1 className="navbar-brand m-0">Inner Peace Blogs</h1>
           <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav d-flex flex-row gap-3 list-unstyled">
-              {/* Navbar link to home page*/}
-              <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="#">
-                  MERN
-                </Link>
-              </li>
-              {/* Navbar link to create post page*/}
-              <li className="nav-item">
-                <Link to="/" className="nav-link">
-                  Create Post
-                </Link>
-              </li>
-              {/* Navbar link to All post page*/}
-              <li className="nav-item">
-                <Link to="/all" className="nav-link">
-                  All Post
-                </Link>
-              </li>
+            <ul className="navbar-nav ms-auto d-flex flexrow gap-4">
+              {isAuthenticated ? (
+                <>
+                  <li className="nav-item">
+                    <Link
+                      className="nav-link fw-bold"
+                      aria-current="page"
+                      to="/"
+                    >
+                      Home
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/create">
+                      Create Post
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link " to="/all">
+                      All Post
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <span
+                      className="nav-link"
+                      style={{ cursor: "pointer" }}
+                      onClick={onLogout}
+                    >
+                      Logout
+                    </span>
+                  </li>
+                </>
+              ) : (
+                <li className="nav-item">
+                  <Link to="/" className="nav-link">
+                    Login
+                  </Link>
+                </li>
+              )}
             </ul>
           </div>
         </div>

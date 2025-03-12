@@ -1,0 +1,74 @@
+/* Container Styling */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the cards */
+    gap: 20px; /* Space between cards */
+    padding: 20px;
+}
+
+/* Card Styling */
+.card {
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.2s ease-in-out;
+    max-width: 350px;
+}
+
+/* Card Hover Effect */
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Title and Text Styling */
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.card-subtitle {
+    font-size: 16px;
+    color: #666;
+}
+
+.text-muted {
+    font-size: 14px;
+    color: #888;
+}
+
+/* Buttons (Links) Styling */
+.card-link {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+}
+
+.card-link:hover {
+    background-color: #0056b3;
+}
+
+/* Delete Button (Make it Red) */
+.card-link:nth-child(1) {
+    background-color: #dc3545;
+}
+
+.card-link:nth-child(1):hover {
+    background-color: #a71d2a;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+}
