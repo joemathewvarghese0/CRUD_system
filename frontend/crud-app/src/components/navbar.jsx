@@ -8,7 +8,9 @@ const Navbar = ({ isAuthenticated, onLogout }) => {
     <div>
       {/* Bootstrap Navbar */}
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
+        <div className="container-fluid d-flex justify-content-between align-items-center">
+           {/* Left: Website Title */}
+        <h1 className="navbar-brand m-0">Inner Peace Blogs</h1>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto d-flex flexrow gap-4">
               {isAuthenticated ? (

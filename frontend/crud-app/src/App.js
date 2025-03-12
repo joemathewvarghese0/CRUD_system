@@ -11,6 +11,7 @@ import Update from "./components/update";
 import Read from "./components/read";
 import Login from "./components/login";
 import Register from "./components/register";
+import Home from "./components/Home";
 import { useState, useEffect } from "react";
 
 //def the main app component
@@ -44,18 +45,21 @@ function App() {
           {!isAuthenticated ? (
             // Login route when user is NOT authenticated
             <>
-            <Route path="*" element={<Login onLogin={handleLogin} />} />
+            
+            <Route path="/" element={<Login onLogin={handleLogin} />} />
             <Route path="/register" element={<Register />} />
             <Route path="*" element={<Navigate to="/" />} />
             </>
           ) : (
             <>
+               {/*Route for homepage */}
+              <Route path="/" element={<Home />} />
+               {/*Route for creating a new user*/}
               <Route path="/create" element={<Create />} />
-              {/*Route for creating a new user*/}
-              <Route path="/all" element={<Read />} />
               {/*Route for reading all users*/}
-              <Route path="/:id" element={<Update />} />
+              <Route path="/all" element={<Read />} />
               {/*Route for updating a specific user by id*/}
+              <Route path="/:id" element={<Update />} />
               <Route path="*" element={<Navigate to="/" />} />
             </>
           )}

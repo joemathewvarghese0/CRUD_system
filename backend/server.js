@@ -2,11 +2,21 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
 require("dotenv").config();
-const User = require("./models/userModel");
+//const User = require("./models/userModel");
+const path = require("path");
+const fs = require("fs");
 
 const cors = require("cors");
 
+// Ensure 'uploads' folder exists
+const uploadDir = path.join(__dirname, "uploads");
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir);
+}
+
 const userRoute = require("./routes/userroutes");
+const authRoute = require("./routes/authRoutes");
+const uploadRoutes = require("./routes/uploadRoutes");
 
 //Creating an instance of an Express application
 const app = express();
@@ -20,6 +30,10 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use("/api/users", userRoute);
+
+app.use("/uploads", express.static("uploads"));
+
+
 
 if(!process.env.URI){
   console.error("MongoDB URI is missing in .env file");
@@ -43,7 +57,7 @@ mongoose.connect(process.env.URI).then(() => {
     process.exit(1);
 });
 
-
+//authentication middleware
 const authenticateToken = (req,res,next) => {
   const authHeader = req.headers.authorization;
   if (!authHeader) return res.status(403).json({message: "access denied"});
@@ -57,7 +71,9 @@ const authenticateToken = (req,res,next) => {
   });
 };
 
-app.use("/api/users", authenticateToken, userRoute);
+app.use("/api/users", authRoute);
+app.use("/api/users", authenticateToken, authRoute);
+app.use("/api/upload", uploadRoutes);
 
 app.use((err,req,res,next) => {
   console.error(err.stack);
